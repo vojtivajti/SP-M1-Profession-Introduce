@@ -20,8 +20,8 @@ public class Main {
         System.out.println("Значение переменно shortVariable с типом short равно " + shortVariable);
         System.out.println("Значение переменно intVariable с типом int равно " + intVariable);
         System.out.println("Значение переменно longVariable с типом long равно " + longVariable);
-        System.out.println("Значение переменно floatVariable с типом long равно " + floatVariable);
-        System.out.println("Значение переменно doubleVariable с типом long равно " + doubleVariable);
+        System.out.println("Значение переменно floatVariable с типом float равно " + floatVariable);
+        System.out.println("Значение переменно doubleVariable с типом double равно " + doubleVariable);
 
         System.out.println();
 
@@ -34,7 +34,7 @@ public class Main {
         System.out.println("Задача 2");
         float floatVariable2 = 27.12f;
         long longVariable2 = 987678965549L;
-        float floatVariable3 = 2.786f;
+        double doubleVariable2 = 2.786;
         short shortVariable2 = 569;
         short shortVariable3 = -159;
         int intVariable2 = 27897;

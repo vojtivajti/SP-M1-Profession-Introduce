@@ -88,9 +88,9 @@ public class Main {
         System.out.println("Задача 4");
         int age4 = 18;
 
-        if (age4 > 2 && age4 < 6) {
+        if (age4 >= 2 && age4 <= 6) {
             System.out.println("Если возраст человека " + age4 + ", то ему нужно ходить в детский сад");
-        } else if (age4 > 7 && age4 < 17) {
+        } else if (age4 >= 7 && age4 <= 17) {
             System.out.println("Если возраст человека " + age4 + ", то ему нужно ходить в школу");
 
         } else if (age4 >= 18 && age4 <= 24) {

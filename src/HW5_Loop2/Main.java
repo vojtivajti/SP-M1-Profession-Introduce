@@ -101,15 +101,134 @@ public class Main {
 
         while (deposit4 < 12000000){
             month4++;
-            deposit4 *= (1 + (float)100/interestRate/12);
+            deposit4 *= (1 + (float)interestRate/100);
             System.out.println(month4 + "  месяц. Сумма накоплений равна: " + deposit4);
         }
         System.out.println(deposit4);
 
+        System.out.println();
 
 
+        /*
+        Задача 5
+        Видоизмените программу таким образом, чтобы в консоль выводились не все месяцы подряд, а только каждый шестой.
+        Должны быть видны накопления за 6-й, 12-й, 18-й, 24-й и следующие месяцы.
+         */
+
+        System.out.println("Задача №5");
+
+        int deposit5 = 15000;
+        int interestRate5 = 7;
+        int month5 = 0;
+
+        while (deposit5 < 12000000){
+            month5++;
+            deposit5 *= (1 + (float)interestRate5/100);
+            if (month5 % 6 == 0) {
+                System.out.println(month5 + "  месяц. Сумма накоплений равна: " + deposit5);
+            }
+        }
+        System.out.println(deposit5);
+
+        System.out.println();
 
 
+        /*
+        Задача 6
+        Василий решил, что будет копить деньги ближайшие 9 лет. Он хочет знать, какой будет сумма его накоплений каждые
+        полгода на протяжении этих 9 лет.
+        Исходная сумма всё та же — 15 тысяч рублей, проценты банка — 7% ежемесячно.
+        Напишите программу, которая будет выводить сумму накоплений за каждые полгода в течение 9 лет.
+         */
+
+        System.out.println("Задача №6");
+
+        int deposit6 = 15000;
+        int interestRate6 = 7;
+        int month6 = 0;
+        int depositPeriodM = 108;
+
+        while (month6 < depositPeriodM){
+            month6++;
+            deposit6 *= (1 + (float)interestRate6/100);
+            if (month6 % 6 == 0) {
+                System.out.println(month6 + "  месяц. Сумма накоплений равна: " + deposit6);
+            }
+        }
+        System.out.println(deposit6);
+
+        System.out.println();
+
+
+        /*
+        Задача 7
+        В компании пятница — отчетный день.
+        Нужно написать программу, которая считает дни месяца по датам, определяет, какой день — пятница, и выводит
+        сообщение с напоминанием, что нужно подготовить еженедельный отчет.
+        Создайте переменную типа int, которая хранит в себе число,
+        выпадающее на первую пятницу месяца (число от 1 до 7).
+        Выведите на каждую пятницу месяца (включая полученную) сообщение следующего вида:
+        «Сегодня пятница, ...-е число. Необходимо подготовить отчет».
+        В нашем месяце 31 день.
+        В результате у вас должно получиться от 4 до 5 сообщений с напоминаниями по разным датам.
+         */
+
+        System.out.println("Задача №7");
+
+        int daysInMonth = 31;
+        int curDayW = 0;
+        int curDayM = 0;
+
+        while (curDayM < daysInMonth){
+            curDayW++;
+            curDayM++;
+            if (curDayW == 5){
+                System.out.println("Сегодня пятница, " + curDayM + "-е число. Необходимо подготовить отчет");
+            }
+
+            if (curDayW == 7){
+                curDayW = 0;
+            }
+        }
+
+        System.out.println();
+
+
+        /*
+        Задача 8
+        Нам нужно написать астрономическое приложение, которое считает, когда над Землей пролетает комета.
+        Известно, что комета пролетает каждый 79-й год, начиная с нулевого.
+        В консоль нужно вывести все годы за последние 200 лет, когда появлялась комета,
+        а также следующий год ее появления (ближайшие 100 лет).
+        Для вычисления периода можно создать две дополнительные переменные, которые содержат год за 200 лет до текущего
+        (из созданной ранее переменной) в качестве старта и 100 лет после в качестве завершения периода расчета.
+        В результате решения задачи в консоли должен получиться следующий результат:
+        1896
+        1975
+        2054
+         */
+
+        System.out.println("Задача №8");
+
+        int startYear = 2025;
+        int cometArrivalPeriod = 79;
+        int curYear = 2025;
+        int previousPerioadY = startYear - 200;
+        int nextPerioadY = startYear + 100;
+
+        while (previousPerioadY != startYear){
+            if (previousPerioadY % 79 == 0){
+                System.out.println(previousPerioadY);
+            }
+            previousPerioadY++;
+        }
+
+        while (nextPerioadY != startYear){
+            if (nextPerioadY % 79 == 0){
+                System.out.println(nextPerioadY);
+            }
+            nextPerioadY--;
+        }
 
     }
 }

@@ -68,7 +68,7 @@ public class Main {
          */
         System.out.println("Задача 3");
 
-        float avgPayment = totalPayments / payments.length;
+        float avgPayment = (float)totalPayments / payments.length;
 
         System.out.println("Средняя сумма трат за месяц составила " + avgPayment + " рублей");
 

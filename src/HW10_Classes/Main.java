@@ -1,4 +1,4 @@
-package HW9_Classes;
+package HW10_Classes;
 
 public class Main {
     public static void main(String[] args) {

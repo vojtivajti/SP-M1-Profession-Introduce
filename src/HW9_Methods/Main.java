@@ -19,18 +19,16 @@ public class Main {
         }
     }
 
-    public static void detrminateDeliveryDays(int deliveryDistance){
+    public static void determinateDeliveryDays(int deliveryDistance){
         int defaultDeliveryTime = 1;
-        if (deliveryDistance <= 100){
-            if (deliveryDistance <= 20){
-                System.out.println("Потребуется дней: " + defaultDeliveryTime);
-            } else if (deliveryDistance <= 60) {
-                defaultDeliveryTime += 1;
-                System.out.println("Потребуется дней: " + defaultDeliveryTime);
-            } else {
-                defaultDeliveryTime += 2;
-                System.out.println("Потребуется дней: " + defaultDeliveryTime);
-            }
+        if (deliveryDistance <= 20){
+            System.out.println("Потребуется дней: " + defaultDeliveryTime);
+        } else if (deliveryDistance > 20 && deliveryDistance <= 60) {
+            defaultDeliveryTime += 1;
+            System.out.println("Потребуется дней: " + defaultDeliveryTime);
+        } else if (deliveryDistance > 60 && deliveryDistance <= 100){
+            defaultDeliveryTime += 2;
+            System.out.println("Потребуется дней: " + defaultDeliveryTime);
         } else {
             System.out.println("Свыше 100 км доставки нет.");
         }
@@ -93,9 +91,9 @@ public class Main {
 
         System.out.println("Задача 3");
 
-        int deliveryDistance = 61;
+        int deliveryDistance = 19;
 
-        detrminateDeliveryDays(deliveryDistance);
+        determinateDeliveryDays(deliveryDistance);
 
     }
 }

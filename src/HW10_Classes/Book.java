@@ -27,9 +27,9 @@ public class Book {
         this.bookName = bookName;
     }
 
-    public void setBookAuthor(String authorName, String authorSurname) {
-        this.bookAuthor.setAuthorSurname(authorName);
-        this.bookAuthor.setAuthorSurname(authorSurname);
+    public void setBookAuthor(String Name, String Surname) {
+        this.bookAuthor.setAuthorSurname(Name);
+        this.bookAuthor.setAuthorSurname(Surname);
     }
 
     public void setYearOfPublication(int yearOfPublication) {

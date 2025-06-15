@@ -1,27 +1,27 @@
 package HW10_Classes;
 
 public class Author {
-    private String authorName;
-    private String authorSurname;
+    private String Name;
+    private String Surname;
 
-    public Author(String authorName, String authorSurname) {
-        this.authorName = authorName;
-        this.authorSurname = authorSurname;
+    public Author(String Name, String Surname) {
+        this.Name = Name;
+        this.Surname = Surname;
     }
 
     public String getAuthorName() {
-        return this.authorName;
+        return this.Name;
     }
 
     public String getAuthorSurname() {
-        return this.authorSurname;
+        return this.Surname;
     }
 
-    public void setAuthorName(String authorName) {
-        this.authorName = authorName;
+    public void setAuthorName(String Name) {
+        this.Name = Name;
     }
 
-    public void setAuthorSurname(String authorSurname) {
-        this.authorSurname = authorSurname;
+    public void setAuthorSurname(String Surname) {
+        this.Surname = Surname;
     }
 }

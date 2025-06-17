@@ -1,28 +1,28 @@
 package HW11_ObjectMethods;
 
 public class Author {
-    private String Name;
-    private String Surname;
+    private String name;
+    private String surname;
 
-    public Author(String Name, String Surname) {
-        this.Name = Name;
-        this.Surname = Surname;
+    public Author(String name, String surname) {
+        this.name = name;
+        this.surname = surname;
     }
 
     public String getAuthorName() {
-        return this.Name;
+        return this.name;
     }
 
     public String getAuthorSurname() {
-        return this.Surname;
+        return this.surname;
     }
 
-    public void setAuthorName(String Name) {
-        this.Name = Name;
+    public void setAuthorName(String name) {
+        this.name = name;
     }
 
     public void setAuthorSurname(String Surname) {
-        this.Surname = Surname;
+        this.surname = surname;
     }
 
     public String toString() {
@@ -30,11 +30,11 @@ public class Author {
     }
 
     public boolean equals(Author author) {
-        return this.Name.equals(author.getAuthorName()) && this.Surname.equals(author.getAuthorSurname());
+        return this.name.equals(author.getAuthorName()) && this.surname.equals(author.getAuthorSurname());
     }
 
     public int hashCode() {
-        return java.util.Objects.hash(this.Name, this.Surname);
+        return java.util.Objects.hash(this.name, this.surname);
     }
 
 

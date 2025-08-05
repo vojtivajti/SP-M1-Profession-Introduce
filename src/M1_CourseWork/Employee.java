@@ -4,13 +4,14 @@ public class Employee {
     private final String fio;
     private int department;
     private int salary;
+    private int employeeId;
     private static int id = 0;
 
     public Employee(String fio, int department, int salary) {
         this.fio = fio;
         this.department = department;
         this.salary = salary;
-        this.id = id;
+        this.employeeId = id;
         id += 1;
     }
 
@@ -27,7 +28,7 @@ public class Employee {
     }
 
     public int getId(){
-        return id;
+        return employeeId;
     }
 
     public void setDepartment(int department){
@@ -42,18 +43,18 @@ public class Employee {
         return this.fio.equals(employee.getFio()) &&
                this.department == employee.getDepartment() &&
                this.salary == employee.getSalary() &&
-               this.id == employee.getId();
+               this.employeeId == employee.getId();
     }
 
     public int hashCode(){
-        return java.util.Objects.hash(fio, department, salary, id);
+        return java.util.Objects.hash(fio, department, salary, employeeId);
     }
 
-    public String toString(Employee employee){
-        return "Сотрудник: " + "ФИО: " + employee.getFio() +
-               ". Отдел: " + employee.getDepartment() +
-               ". ЗП: " + employee.getSalary() +
-               ". ID: " + employee.getId();
+    public String toString(){
+        return "Сотрудник: " + "ФИО: " + this.getFio() +
+               ". Отдел: " + this.getDepartment() +
+               ". ЗП: " + this.getSalary() +
+               ". ID: " + this.getId();
     }
 
 }

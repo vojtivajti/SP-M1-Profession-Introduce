@@ -57,4 +57,24 @@ public class Employee {
                ". ID: " + this.getId();
     }
 
+    //Для вывода сотрудников без указания отдела
+    public String departmentList(){
+        return "Сотрудник: " + "ФИО: " + this.getFio() +
+                ". ЗП: " + this.getSalary() +
+                ". ID: " + this.getId();
+    }
+
+    //Для вывода сотрудников с зарплатой меньшей чем аргумент
+    public String departmentPoorList(){
+        return "Сотрудник: " + "ID: " + this.getId()+
+                "ФИО: " + this.getFio() +
+                ". ЗП: " + this.getSalary();
+    }
+
+    //Для вывода сотрудников с зарплатой большей чем аргумент
+    public String departmentReachList(){
+        return "Сотрудник: " + "ID: " + this.getId()+
+                ". ФИО: " + this.getFio() +
+                ". ЗП: " + this.getSalary();
+    }
 }

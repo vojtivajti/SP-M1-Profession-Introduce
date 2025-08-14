@@ -1,4 +1,4 @@
-package M1_CourseWork;
+package M1_CourseWorkBase;
 
 public class Employee {
     private final String fio;

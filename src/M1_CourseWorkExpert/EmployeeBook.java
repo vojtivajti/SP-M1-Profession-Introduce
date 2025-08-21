@@ -1,5 +1,7 @@
 package M1_CourseWorkExpert;
 
+import java.util.Arrays;
+
 public class EmployeeBook {
     private final Employee[] employees = new Employee[10];
 
@@ -28,7 +30,9 @@ public class EmployeeBook {
         employees[9] = employee10;
     }
 
+    //Список всех сотрудников со всмеми их данными
     public void employeesList(){
+        System.out.println("\nСписок всех сотрудников:");
         for (Employee employee : employees){
             if (employee != null) {
                 System.out.println(employee.toString());
@@ -36,6 +40,7 @@ public class EmployeeBook {
         }
     }
 
+    //Месячная ЗП всех сотрудников
     public int monthSalary(){
         int summSalary = 0;
         for (Employee employee : employees){
@@ -45,6 +50,92 @@ public class EmployeeBook {
         }
         return summSalary;
     }
+
+    // Расчет месячной зарплаты сотрудников определенного отдела
+    public float departmentMonthSalary(int departmentNumber){
+        float departmentMonthSalary = 0;
+
+        for (Employee employee:employees){
+            if (employee != null && employee.getDepartment() == departmentNumber){
+                departmentMonthSalary += employee.getSalary();
+            }
+        }
+
+        return departmentMonthSalary;
+
+    }
+
+    //Сотрудник с минимальной зарплатой
+    public void minSalaryEmployer(){
+        int minSalary = Integer.MAX_VALUE;
+        int poorestIndex = 0;
+
+        for (Employee employee : employees){
+            if (employee != null){
+                if (employee.getSalary() < minSalary){
+                    minSalary = employee.getSalary();
+                    poorestIndex = Arrays.asList(employees).indexOf(employee);
+                }
+            }
+        }
+
+        System.out.println("\nМинимальная зарплата у:");
+        System.out.println(employees[poorestIndex].toString());
+    }
+
+    //Сотрудник с максимальной зарплатой
+    public void maxSalaryEmployer(){
+        int maxSalary = Integer.MIN_VALUE;
+        int reachestIndex = 0;
+
+        for (Employee employee : employees){
+            if (employee != null){
+                if (employee.getSalary() > maxSalary){
+                    maxSalary = employee.getSalary();
+                    reachestIndex = Arrays.asList(employees).indexOf(employee);
+                }
+            }
+        }
+
+        System.out.println("\nМаксимальная зарплата у:");
+        System.out.println(employees[reachestIndex].toString());
+    }
+
+    //Средняя зарплата среди всех сотрудников
+    public float avgSalary(){
+        int employeeCount = 0;
+        for (Employee employee : employees){
+            if (employee != null){
+                employeeCount += 1;
+            }
+        }
+
+        if (employeeCount != 0){
+            return (float) monthSalary() / employeeCount;
+        } else {
+            return 0;
+        }
+    }
+
+    //Вывод ФИО всех сотрудников
+    public void printEmployeesFio(){
+        System.out.println("\nФИО всех сотрудников:");
+        for(Employee employee : employees){
+            System.out.println(employee.getFio());
+        }
+    }
+
+    //Вывод всех сотрудников отдела
+    public void departmentEmployeeList(int departmentNumber){
+        System.out.println("\nСписок сотрудников " + departmentNumber + " отдела:");
+        for (Employee employee : employees){
+            if (employee != null && employee.getDepartment() == departmentNumber){
+                System.out.println(employee.departmentList());
+            }
+        }
+    }
+
+
 
     public boolean addEmployee(Employee newEmployee){
         for (int i = 0; i < employees.length; i++) {

@@ -3,7 +3,7 @@ package M1_CourseWorkExpert;
 public class Employee {
     private final String fio;
     private int department;
-    private int salary;
+    private float salary;
     private int employeeId;
     private static int id = 0;
 
@@ -23,7 +23,7 @@ public class Employee {
         return department;
     }
 
-    public int getSalary() {
+    public float getSalary() {
         return salary;
     }
 
@@ -35,7 +35,7 @@ public class Employee {
         this.department = department;
     }
 
-    public void setSalary(int salary){
+    public void setSalary(float salary){
         this.salary = salary;
     }
 

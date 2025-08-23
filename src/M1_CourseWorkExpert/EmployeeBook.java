@@ -67,7 +67,7 @@ public class EmployeeBook {
 
     //Сотрудник с минимальной зарплатой
     public void minSalaryEmployer(){
-        int minSalary = Integer.MAX_VALUE;
+        float minSalary = Float.MAX_VALUE;
         int poorestIndex = 0;
 
         for (Employee employee : employees){
@@ -85,7 +85,7 @@ public class EmployeeBook {
 
     //Сотрудник с максимальной зарплатой
     public void maxSalaryEmployer(){
-        int maxSalary = Integer.MIN_VALUE;
+        float maxSalary = Float.MIN_VALUE;
         int reachestIndex = 0;
 
         for (Employee employee : employees){
@@ -117,6 +117,23 @@ public class EmployeeBook {
         }
     }
 
+    // Средняя зарплата сотрудников по отделу
+    public float departmentAvgSalary(int departmentNumber){
+        int employeeCount = 0;
+        for (Employee employee:employees){
+            if (employee != null && employee.getDepartment() == departmentNumber){
+                employeeCount += 1;
+            }
+        }
+
+        System.out.print("\nСредняя зарплата в отделе " + departmentNumber + ": ");
+        if (employeeCount != 0){
+            return (float) departmentMonthSalary(departmentNumber) / employeeCount;
+        } else {
+            return 0;
+        }
+    }
+
     //Вывод ФИО всех сотрудников
     public void printEmployeesFio(){
         System.out.println("\nФИО всех сотрудников:");
@@ -135,7 +152,32 @@ public class EmployeeBook {
         }
     }
 
+    //Проиндексировать зарплату (вызвать изменение зп у всех сотрудников на величину аргумента в %)
+    public void SalaryIndexing(float indexArg){
+        System.out.println("\nПроцесс индексирования зарплаты:");
+        for (Employee employee : employees){
+            if (employee != null){
+                System.out.println(employee.getFio());
+                System.out.println("ЗП была: " + employee.getSalary());
+                employee.setSalary((float) employee.getSalary() + (employee.getSalary() * indexArg/100));
+                System.out.println("ЗП стала: " + employee.getSalary() + "\n");
+            }
+        }
+    }
 
+    //Индексирование зарплаты сотрудников отдела
+    public void departmentSalaryIndexing(int departmentNumber, float indexArg){
+        System.out.println("Процесс индексирования зарплаты:");
+
+        for(Employee employee:employees){
+            if (employee != null && employee.getDepartment() == departmentNumber){
+                System.out.println(employee.getFio());
+                System.out.println("ЗП была: " + employee.getSalary());
+                employee.setSalary(employee.getSalary() + (employee.getSalary() * indexArg/100));
+                System.out.println("ЗП стала: " + employee.getSalary() + "\n");
+            }
+        }
+    }
 
     public boolean addEmployee(Employee newEmployee){
         for (int i = 0; i < employees.length; i++) {

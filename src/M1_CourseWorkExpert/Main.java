@@ -31,10 +31,21 @@ public class Main {
         //Средняя зарплата среди всех сотрудников
         System.out.println("\nСредняя зарплата по всем сотрудникам: " + employeeBook.avgSalary());
 
+        //Средняя зарплата среди сотрудников определенного отдела
+        System.out.println(employeeBook.departmentAvgSalary(4));
+
         //Вывод ФИО всех сотрудников
         employeeBook.printEmployeesFio();
 
         //Вывод всех сотрудников определенного отдела
-        employeeBook.departmentEmployeeList(6);
+        employeeBook.departmentEmployeeList(4);
+
+        //Индексирование зарплаты всех сотрудников
+        employeeBook.SalaryIndexing(10);
+
+        //Индексирование зарплаты сотрудников определенного отдела
+        employeeBook.departmentSalaryIndexing(4, 10);
+
+
     }
 }
